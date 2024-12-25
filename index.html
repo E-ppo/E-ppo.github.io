@@ -11,27 +11,21 @@
   <body>
     <header>
       <nav class="header-container">
-        <a href="#">Home</a>
+        <a href="#" data-page="home">Home</a>
         <ul>
-          <li><a href="#" data-hover="Hover Text">About</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#" data-page="about">About</a></li>
+          <li><a href="#" data-page="portfolio">Portfolio</a></li>
+          <li><a href="#" data-page="blog">Blog</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <h2>Welcome to my GitHub blog!</h2>
-      <p>This is a simple blog built using HTML, CSS, and JavaScript, hosted on GitHub Pages.</p>
-      <h3>Latest Posts</h3>
-      <ul>
-        <li><a href="#">Post 1</a></li>
-        <li><a href="#">Post 2</a></li>
-        <li><a href="#">Post 3</a></li>
-      </ul>
+    <main id="content">
+      <!-- 페이지 내용이 여기에 동적으로 로드됩니다 -->
     </main>
     <footer class="footer-container">
       <p>&copy; 2023 Eppo GitHub Blog. All rights reserved.</p>
     </footer>
     <script src="js/responsive.js"></script>
+    <script src="js/router.js"></script>
   </body>
 </html>
