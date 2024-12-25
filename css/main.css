@@ -17,7 +17,8 @@
       font-weight: var(--font-weight-normal);
     }
 
-    a:hover {
+    a:hover,
+    a.active {
       color: var(--brand);
     }
   }
