@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  border-bottom: 1px solid var(--line-gray);
 
   ul {
     display: flex;
@@ -16,8 +17,8 @@
       font-weight: 600;
     }
 
-    a a:hover {
-      color: brown;
+    a:hover {
+      color: var(--brand);
     }
   }
 }
