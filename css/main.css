@@ -22,3 +22,10 @@
     }
   }
 }
+
+.footer-container {
+  flex-shrink: 0;
+  background-color: var(--background-gray);
+  padding: 20px;
+  text-align: center;
+}
