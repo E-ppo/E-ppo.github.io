@@ -7,5 +7,5 @@ const Home = () => {
 export default Home
 
 const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.dustyRose};
+  ${({ theme }) => theme.getFont("title", "lg")}
 `
