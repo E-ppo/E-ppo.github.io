@@ -2,16 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  border-bottom: 1px solid var(--line-gray);
+  padding: 25px;
+  background-color: var(--background-gray);
 
   ul {
     display: flex;
     list-style-type: none;
-    gap: 20px;
+    max-width: 300px;
+    min-width: 200px;
+    width: 100%;
   }
 
   li {
+    flex: 1;
+    text-align: center;
     a {
       font-size: var(--font-size-base);
       font-weight: var(--font-weight-normal);
@@ -19,6 +23,7 @@
 
     a:hover,
     a.active {
+      font-weight: var(--font-weight-bold);
       color: var(--brand);
     }
   }
