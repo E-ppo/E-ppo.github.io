@@ -1,9 +1,9 @@
+import { TabValue } from "@/components/tab/type"
 import { createContext } from "react"
 
 export type TabContextType = {
-  activeTab: number
-  setActiveTab: (index: number) => void
-  onChange?: (index: number) => void
+  activeTab: TabValue
+  setActiveTab: (index: TabValue) => void
 }
 
 export const TabContext = createContext<TabContextType>({

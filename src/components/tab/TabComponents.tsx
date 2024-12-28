@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { TabContext } from "./TabContext"
-import { ChildrenProps } from "@/components/tab/type"
+import { ChildrenProps, TabValue } from "@/components/tab/type"
 import styled from "styled-components"
 
 interface TabListProps
@@ -10,7 +10,7 @@ interface TabListProps
 interface TabProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">,
     ChildrenProps {
-  value: number
+  value: TabValue
 }
 
 export const TabList = ({ children, style }: TabListProps) => (

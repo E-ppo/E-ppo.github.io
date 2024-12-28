@@ -9,17 +9,17 @@ const NaviList = [
 ] as const
 
 const Header = () => {
-  const handleChange = (index: number) => {
-    console.log(index)
+  const handleChange = (value: string) => {
+    console.log(value)
   }
 
   return (
     <Container>
       <span>로고자리</span>
-      <Tabs defaultTab={1} onChange={handleChange}>
+      <Tabs defaultTab={NaviList[0].path} onChange={handleChange}>
         <Tabs.List>
-          {NaviList.map((item, index) => (
-            <Tabs.Tab key={item.name} value={index}>
+          {NaviList.map((item) => (
+            <Tabs.Tab key={item.name} value={item.path}>
               {item.name}
             </Tabs.Tab>
           ))}

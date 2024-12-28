@@ -1,25 +1,20 @@
 import { useState, ReactNode } from "react"
 import { TabContext } from "./TabContext"
 import { TabList, Tab } from "./TabComponents"
+import { TabValue } from "@/components/tab/type"
 
-type TabsProps = {
+type TabsProps<T extends TabValue> = {
   children: ReactNode
-  defaultTab: number
-  onChange?: (index: number) => void
+  defaultTab: T
+  onChange?: (value: T) => void
 }
 
-type TabsComponent = React.FC<TabsProps> & {
-  List: typeof TabList
-  Tab: typeof Tab
-}
+const Tabs = <T extends TabValue>({ children, defaultTab, onChange }: TabsProps<T>) => {
+  const [activeTab, setActiveTab] = useState<T>(defaultTab)
 
-const Tabs: TabsComponent = ({ children, defaultTab, onChange }) => {
-  const [activeTab, setActiveTab] = useState(defaultTab)
-  const handleTabChange = (index: number) => {
-    setActiveTab(index)
-    if (onChange) {
-      onChange(index)
-    }
+  const handleTabChange = (value: TabValue) => {
+    setActiveTab(value as T)
+    onChange?.(value as T)
   }
   return (
     <TabContext.Provider value={{ activeTab, setActiveTab: handleTabChange }}>
