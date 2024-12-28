@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <Container>
-      <span onClick={() => navegation("/")}>로고자리</span>
+      <span onClick={() => navegation("/")}>🌸</span>
       <Tabs defaultTab={NaviList[0].path} onChange={handleChange}>
         <Tabs.List>
           {NaviList.map((item) => (
