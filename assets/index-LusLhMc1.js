@@ -62,7 +62,7 @@ Please change the parent <Route path="${M}"> to <Route path="${M==="/"?"*":`${M}
     color: ${({theme:l,$activeTab:u})=>!u&&l.colors.brand.light};
     cursor: pointer;
   }
-`,ul=({children:l,defaultTab:u,onChange:a})=>{const[c,f]=_.useState(u),d=m=>{f(m),a==null||a(m)};return he.jsx(Fd.Provider,{value:{activeTab:c,setActiveTab:d},children:l})};ul.List=py;ul.Tab=hy;const Vf=[{name:"About",path:"/about"},{name:"Portfolio",path:"/portfolio"},{name:"Blog",path:"/blog"}],yy=()=>{const l=td(),u=a=>{l(a)};return he.jsxs(gy,{children:[he.jsx("span",{onClick:()=>l("/"),children:"로고자리"}),he.jsx(ul,{defaultTab:Vf[0].path,onChange:u,children:he.jsx(ul.List,{children:Vf.map(a=>he.jsx(ul.Tab,{value:a.path,children:a.name},a.name))})})]})},gy=ml.div`
+`,ul=({children:l,defaultTab:u,onChange:a})=>{const[c,f]=_.useState(u),d=m=>{f(m),a==null||a(m)};return he.jsx(Fd.Provider,{value:{activeTab:c,setActiveTab:d},children:l})};ul.List=py;ul.Tab=hy;const Vf=[{name:"About",path:"/about"},{name:"Portfolio",path:"/portfolio"},{name:"Blog",path:"/blog"}],yy=()=>{const l=td(),u=a=>{l(a)};return he.jsxs(gy,{children:[he.jsx("span",{onClick:()=>l("/"),children:"😃"}),he.jsx(ul,{defaultTab:Vf[0].path,onChange:u,children:he.jsx(ul.List,{children:Vf.map(a=>he.jsx(ul.Tab,{value:a.path,children:a.name},a.name))})})]})},gy=ml.div`
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
