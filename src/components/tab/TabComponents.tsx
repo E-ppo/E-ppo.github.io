@@ -20,7 +20,7 @@ export const TabList = ({ children, style }: TabListProps) => (
 export const Tab = ({ children, value, style }: TabProps) => {
   const { activeTab, setActiveTab } = useContext(TabContext)
   return (
-    <TabButton onClick={() => setActiveTab(value)} activeTab={activeTab === value} style={style}>
+    <TabButton onClick={() => setActiveTab(value)} $activeTab={activeTab === value} style={style}>
       {children}
     </TabButton>
   )
@@ -30,14 +30,15 @@ const TabListContainer = styled.div`
   display: flex;
   gap: 1rem;
 `
-const TabButton = styled.button<{ activeTab: boolean }>`
+const TabButton = styled.button<{ $activeTab: boolean }>`
   ${({ theme }) => theme.getFont("text", "sm")}
   background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ activeTab, theme }) => (activeTab ? theme.colors.brand.default : theme.colors.black)};
+  color: ${({ $activeTab, theme }) =>
+    $activeTab ? theme.colors.brand.default : theme.colors.black};
   border: none;
 
   &:hover {
-    color: ${({ theme, activeTab }) => !activeTab && theme.colors.brand.light};
+    color: ${({ theme, $activeTab }) => !$activeTab && theme.colors.brand.light};
     cursor: pointer;
   }
 `
