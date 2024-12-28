@@ -22,5 +22,6 @@ export default BlogIntro
 const Profile = styled.img`
   width: 10vw;
   min-width: 100px;
+  min-height: 100px;
   border-radius: 50%;
 `

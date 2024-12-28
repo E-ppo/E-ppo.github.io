@@ -16,6 +16,9 @@ export default BlogMain
 
 const Container = styled.div`
   padding: 0 160px;
+  @media (max-width: 768px) {
+    padding: 0 30px;
+  }
 `
 
 export { BlogList, DetailBlog, BlogEditor }
