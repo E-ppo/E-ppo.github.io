@@ -1,7 +1,32 @@
 import "styled-components"
 
-type FontSize = { pc: string; mobile: string }
-type FontStyle = FontSize & { weight: string; lineHeight: string }
+type FontSizeVariants = {
+  lg: string
+  md: string
+  sm: string
+}
+
+type FontSize = {
+  pc: FontSizeVariants
+  mobile: FontSizeVariants
+}
+
+type FontWeight = {
+  bold: string
+  regular: string
+}
+
+type LineHeightVariants = {
+  lg: string
+  md: string
+  sm: string
+}
+
+type CaptionSize = {
+  pc: string
+  mobile: string
+}
+
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
@@ -21,18 +46,18 @@ declare module "styled-components" {
       }
     }
     font: {
-      title: {
-        lg: FontStyle
-        md: FontStyle
-        sm: FontStyle
+      size: {
+        title: FontSize
+        text: FontSize
+        caption: CaptionSize
       }
-      text: {
-        lg: FontStyle
-        md: FontStyle
-        sm: FontStyle
+      weight: FontWeight
+      lineHeight: {
+        title: LineHeightVariants
+        text: LineHeightVariants
+        caption: string
       }
-      caption: FontStyle
     }
-    getFont: (type: "title" | "text", size: "lg" | "md" | "sm") => string
+    getFont: (type: "title" | "text" | "caption", size?: "lg" | "md" | "sm") => string
   }
 }
