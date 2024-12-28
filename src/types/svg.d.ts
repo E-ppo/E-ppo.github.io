@@ -1,4 +1,4 @@
-import * as Icons from "@/svgs"
+import * as Icons from "@/assets/svg"
 
 type KeyOfIcon = keyof typeof Icons
 

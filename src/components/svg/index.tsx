@@ -1,5 +1,5 @@
 import React from "react"
-import * as Icons from "@/svgs"
+import * as Icons from "@/assets/svg"
 import { KeyOfIcon } from "@/types/svg"
 
 interface SvgIconProps extends Omit<React.SVGProps<SVGSVGElement>, "name"> {
