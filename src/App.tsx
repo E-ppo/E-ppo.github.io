@@ -1,15 +1,18 @@
+import { BrowserRouter } from "react-router-dom"
+import { ThemeProvider } from "styled-components"
 import Header from "@/containers/Header"
-import Router from "@/Router"
+import PageRouter from "@/navigations/Router"
 import GlobalStyle from "@/styles/globalStyle"
 import { theme } from "@/styles/theme"
-import { ThemeProvider } from "styled-components"
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header />
-      <Router />
+      <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
+        <GlobalStyle />
+        <Header />
+        <PageRouter />
+      </BrowserRouter>
     </ThemeProvider>
   )
 }

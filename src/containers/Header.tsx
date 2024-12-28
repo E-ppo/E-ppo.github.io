@@ -1,21 +1,23 @@
 import { Tabs } from "@/components/tab/Tabs"
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 const NaviList = [
-  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "Blog", path: "/blog" },
 ] as const
 
 const Header = () => {
-  const handleChange = (value: string) => {
-    console.log(value)
+  const navegation = useNavigate()
+
+  const handleChange = (path: string) => {
+    navegation(path)
   }
 
   return (
     <Container>
-      <span>로고자리</span>
+      <span onClick={() => navegation("/")}>로고자리</span>
       <Tabs defaultTab={NaviList[0].path} onChange={handleChange}>
         <Tabs.List>
           {NaviList.map((item) => (
