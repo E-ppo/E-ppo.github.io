@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from "react"
+import { HTMLAttributes } from "react"
 import { BaseCardProps } from "@/components/card/type"
 import styled from "styled-components"
 
