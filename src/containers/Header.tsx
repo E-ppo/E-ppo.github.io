@@ -1,15 +1,28 @@
 import { Tabs } from "@/components/tab/Tabs"
 import styled from "styled-components"
 
+const NaviList = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Portfolio", path: "/portfolio" },
+  { name: "Blog", path: "/blog" },
+] as const
+
 const Header = () => {
+  const handleChange = (index: number) => {
+    console.log(index)
+  }
+
   return (
     <Container>
       <span>로고자리</span>
-      <Tabs defaultTab={1}>
+      <Tabs defaultTab={1} onChange={handleChange}>
         <Tabs.List>
-          <Tabs.Tab value={0}>About</Tabs.Tab>
-          <Tabs.Tab value={1}>Portfolio</Tabs.Tab>
-          <Tabs.Tab value={2}>Blog</Tabs.Tab>
+          {NaviList.map((item, index) => (
+            <Tabs.Tab key={item.name} value={index}>
+              {item.name}
+            </Tabs.Tab>
+          ))}
         </Tabs.List>
       </Tabs>
     </Container>
