@@ -5,12 +5,13 @@ import styled from "styled-components"
 
 const BlogList = () => {
   const [category, setCategory] = useState("react")
+
   return (
     <>
       <BlogIntro />
       <InnerContainer>
         <CategorySidebar category={category} setCategory={setCategory} />
-        <div>내용이 올 곳</div>
+        <div style={{ display: "flex", flexDirection: "column" }}></div>
       </InnerContainer>
     </>
   )
